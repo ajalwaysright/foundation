@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Application Submitted</title>
+
+<style>
+body {
+    margin:0;
+    font-family: Arial;
+    background:#f4f4f4;
+    text-align:center;
+}
+
+.container {
+    margin-top:100px;
+}
+
+h1 {
+    color:#0b2a4a;
+}
+
+.progress-bar {
+    width:60%;
+    height:25px;
+    background:#ddd;
+    margin:30px auto;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress {
+    height:100%;
+    width:0%;
+    background:#0b2a4a;
+    animation: load 4s linear forwards;
+}
+
+@keyframes load {
+    from { width:0%; }
+    to { width:100%; }
+}
+
+#overlay {
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+    color:white;
+    font-size:28px;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+
+video {
+    display:none;
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Application Submitted Successfully</h1>
+    <p>Thank you for applying to the AJ Is Always Right Foundation.</p>
+
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+
+    <p id="status">Processing your application...</p>
+</div>
+
+<!-- CLICK OVERLAY -->
+<div id="overlay">Click to view your confirmation document</div>
+
+<!-- VIDEO -->
+<video id="video">
+    <source src="rickroll.mp4" type="video/mp4">
+</video>
+
+<script>
+setTimeout(() => {
+    document.getElementById("status").innerText = "Generating confirmation document...";
+}, 1500);
+
+setTimeout(() => {
+    document.getElementById("status").innerText = "Preparing download...";
+}, 3000);
+
+setTimeout(() => {
+    document.getElementById("status").innerText = "Ready!";
+    document.getElementById("overlay").style.display = "flex";
+}, 4000);
+
+// CLICK EVENT (unlocks sound)
+document.getElementById("overlay").onclick = function() {
+    document.querySelector(".container").style.display = "none";
+    this.style.display = "none";
+
+    let vid = document.getElementById("video");
+    vid.style.display = "block";
+    vid.muted = false;
+    vid.play();
+};
+</script>
+
+</body>
+</html>
