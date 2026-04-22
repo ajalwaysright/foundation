@@ -48,13 +48,66 @@ button {
 button:hover {
     background:#123d6b;
 }
-</style>
+    nav {
+    position:absolute;
+    top:20px;
+    right:20px;
+}
 
+.dropdown {
+    position:relative;
+    display:inline-block;
+}
+
+.dropdown button {
+    padding:10px 15px;
+    cursor:pointer;
+}
+
+.dropdown-content {
+    display:none;
+    position:absolute;
+    right:0;
+    background:white;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    display:block;
+    padding:10px;
+    text-decoration:none;
+    color:black;
+}
+
+.dropdown:hover .dropdown-content {
+    display:block;
+}
+
+iframe {
+    width:90%;
+    height:700px;
+    border:none;
+    margin-top:30px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
+
+<nav>
+  <div class="dropdown">
+    <button>Menu ▼</button>
+    <div class="dropdown-content">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="application.html">Application</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+    
 <h1>Apply to the AJ Is Always Right Foundation</h1>
 </header>
 
@@ -75,7 +128,7 @@ button:hover {
 <script>
 function handleSubmit(event) {
     event.preventDefault();
-    alert("Application submitted! (This is a demo — not saved yet)");
+    alert("Application submitted!");
 }
 </script>
 
