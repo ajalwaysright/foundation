@@ -125,32 +125,5 @@ function handleSubmit(event) {
     event.preventDefault();
     window.location.href = "success.html";
 }
-</script>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
-(function(){
-  emailjs.init("YHyesqr5XLqunq-Q1");
-})();
-
-function submitForm(event) {
-    event.preventDefault();
-
-    const params = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        reason: document.getElementById("reason").value
-    };
-
-    emailjs.send("service_ajalwaysright", "template_z13r7nu", params)
-    .then(function() {
-        window.location.href = "success.html";
-    }, function(error) {
-        alert("Failed to send email");
-        console.log(error);
-    });
-}
-</script>
 </body>
 </html>
